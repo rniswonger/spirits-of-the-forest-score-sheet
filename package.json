@@ -4,10 +4,10 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
+    "browser-sync": "^2.26.5",
     "gulp-imagemin": "^5.0.3"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-jshint": "^2.1.0",
