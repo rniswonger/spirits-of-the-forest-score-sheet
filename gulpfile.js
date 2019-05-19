@@ -3,6 +3,23 @@ var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
 var browserSync = require('browser-sync');
 var autoprefixer = require('gulp-autoprefixer');
+var imagemin = require('gulp-imagemin');
+
+gulp.task('images', function() {
+  return gulp.src('assets/images/**/*')
+    .pipe(imagemin([
+      imagemin.jpegtran({progressive:true}),
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.svgo({
+        plugins: [
+          {removeUnknownsAndDefaults: false},
+          {cleanupIDs: false}
+        ]
+      })
+    ]))
+    .pipe(gulp.dest('dist/images'))
+    .pipe(browserSync.stream());
+});
 
 gulp.task('sass', function() {
   gulp
@@ -36,7 +53,8 @@ gulp.task('scripts', ['jshint'], function() {
   gulp.src('assets/scripts/*.js').pipe(gulp.dest('dist/scripts/'));
 });
 
-gulp.task('default', ['sass', 'scripts',  'browser-sync'], function() {
+gulp.task('default', ['sass', 'scripts', 'images', 'browser-sync'], function() {
+  gulp.watch('assets/images/**/*', ['images']);
   gulp.watch('assets/styles/**/*.scss', ['sass']);
   gulp.watch('assets/scripts/**/*.js', ['jshint']);
   gulp.watch('*.html').on('change', browserSync.reload);
