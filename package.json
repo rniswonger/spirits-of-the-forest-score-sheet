@@ -1,0 +1,29 @@
+{
+  "name": "Spirits of the Forest: Scoresheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-sass": "^4.0.2",
+    "jshint": "^2.10.1",
+    "jshint-stylish": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rniswonger/spirits-of-the-forest-score-sheet.git"
+  },
+  "author": "Ryan Niswonger",
+  "license": "Unlicensed",
+  "bugs": {
+    "url": "https://github.com/rniswonger/spirits-of-the-forest-score-sheet/issues"
+  },
+  "homepage": "https://github.com/rniswonger/spirits-of-the-forest-score-sheet#readme"
+}
